@@ -9,6 +9,7 @@ const middlewares = require('./middlewares');
 const api = require('./api');
 
 const app = express();
+app.set('trust proxy', 1);
 
 app.use(morgan('dev'));
 app.use(helmet());
@@ -17,7 +18,7 @@ app.use(express.json());
 
 app.get('/', (req, res) => {
   res.json({
-    message: '🦄🌈✨👋🌎🌍🌏✨🌈🦄'
+    message: '🦄🌈✨👋🌎🌍🌏✨🌈🦄',
   });
 });
 
